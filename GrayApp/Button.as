@@ -30,7 +30,6 @@ package cuatroPlumasUI.GrayApp {
 		
 		
 		public function Button(btnlabel:String):void{
-			
 			this.labelText = btnlabel;
 			init();
 			this.addEventListener(Event.ADDED_TO_STAGE, startListener);

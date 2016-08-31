@@ -52,5 +52,41 @@ package cuatroPlumasUI.GrayApp {
 		public function get btnclickData():BitmapData{
 			return _btnclick.bitmapData;
 		}
+		
+		[Embed(source="Assets/modaltop.png")]
+		private var modaltop:Class;
+		private var _modaltop:Bitmap = new modaltop() as Bitmap;
+		
+		public function get modaltopClass():Bitmap{
+			return _modaltop;
+		}
+		
+		public function get modaltopData():BitmapData{
+			return _modaltop.bitmapData;
+		}
+		
+		[Embed(source="Assets/modalbg.png")]
+		private var modalbg:Class;
+		private var _modalbg:Bitmap = new modalbg() as Bitmap;
+		
+		public function get modalbgClass():Bitmap{
+			return _modalbg;
+		}
+		
+		public function get modalbgData():BitmapData{
+			return _modalbg.bitmapData;
+		}
+		
+		[Embed(source="Assets/closemodalbtn.png")]
+		private var closemodalbtn:Class;
+		private var _closemodalbtn:Bitmap = new closemodalbtn() as Bitmap;
+		
+		public function get closemodalbtnClass():Bitmap{
+			return _closemodalbtn;
+		}
+		
+		public function get closemodalbtnData():BitmapData{
+			return _closemodalbtn.bitmapData;
+		}
 	}
 }
