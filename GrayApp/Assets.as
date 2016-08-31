@@ -31,7 +31,7 @@ package cuatroPlumasUI.GrayApp {
 		
 		[Embed(source="Assets/btnover.png")]
 		private var btnover:Class;
-		private var _btnover:Bitmap = new btn() as Bitmap;
+		private var _btnover:Bitmap = new btnover() as Bitmap;
 		
 		public function get btnoverClass():Bitmap{
 			return _btnover;
@@ -43,7 +43,7 @@ package cuatroPlumasUI.GrayApp {
 		
 		[Embed(source="Assets/btnclick.png")]
 		private var btnclick:Class;
-		private var _btnclick:Bitmap = new btn() as Bitmap;
+		private var _btnclick:Bitmap = new btnclick() as Bitmap;
 		
 		public function get btnclickClass():Bitmap{
 			return _btnclick;
