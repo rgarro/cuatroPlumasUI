@@ -16,5 +16,41 @@ package cuatroPlumasUI.GrayApp {
 		public function get bgData():BitmapData{
 			return _bg.bitmapData;
 		}
+		
+		[Embed(source="Assets/btn.png")]
+		private var btn:Class;
+		private var _btn:Bitmap = new btn() as Bitmap;
+		
+		public function get btnClass():Bitmap{
+			return _btn;
+		}
+		
+		public function get btnData():BitmapData{
+			return _btn.bitmapData;
+		}
+		
+		[Embed(source="Assets/btnover.png")]
+		private var btnover:Class;
+		private var _btnover:Bitmap = new btn() as Bitmap;
+		
+		public function get btnoverClass():Bitmap{
+			return _btnover;
+		}
+		
+		public function get btnoverData():BitmapData{
+			return _btnover.bitmapData;
+		}
+		
+		[Embed(source="Assets/btnclick.png")]
+		private var btnclick:Class;
+		private var _btnclick:Bitmap = new btn() as Bitmap;
+		
+		public function get btnclickClass():Bitmap{
+			return _btnclick;
+		}
+		
+		public function get btnclickData():BitmapData{
+			return _btnclick.bitmapData;
+		}
 	}
 }
