@@ -43,7 +43,7 @@ package cuatroPlumasUI.GrayApp {
 		
 		protected function init():void{
 			tf = new TextFormat();
-			tf.size = 15;
+			tf.size = 18;
 			tf.color = 0x000000;
 			this.assets = new Assets();
 			this.topbg = new Bitmap(assets.modaltopData);

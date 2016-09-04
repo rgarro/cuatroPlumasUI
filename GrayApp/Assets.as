@@ -1,6 +1,8 @@
 package cuatroPlumasUI.GrayApp {
 	import flash.display.BitmapData;
 	import flash.display.Bitmap;
+	
+	
 	/**
 	 * @author Rolando <rolando@emptyart.xyz>
 	 */
@@ -87,6 +89,18 @@ package cuatroPlumasUI.GrayApp {
 		
 		public function get closemodalbtnData():BitmapData{
 			return _closemodalbtn.bitmapData;
+		}
+		
+		[Embed(source="Assets/formGroupBG.png")]
+		private var formGroupBG:Class;
+		private var _formGroupBG:Bitmap = new formGroupBG() as Bitmap;
+		
+		public function get formGroupBGClass():Bitmap{
+			return _formGroupBG;
+		}
+		
+		public function get formGroupBGData():BitmapData{
+			return _formGroupBG.bitmapData;
 		}
 	}
 }
