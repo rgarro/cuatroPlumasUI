@@ -1,4 +1,5 @@
 package cuatroPlumasUI.GrayApp {
+	import flash.geom.Rectangle;
 	import flash.display.BitmapData;
 	import flash.net.FileFilter;
 	import flash.events.MouseEvent;
@@ -10,6 +11,14 @@ package cuatroPlumasUI.GrayApp {
 	import flash.display.Sprite;
 	import flash.media.Sound;
 	import flash.external.ExternalInterface;
+	
+	import flash.display.Loader;
+	//import fl.controls.Button;
+	import flash.net.FileReference;
+	import flash.net.FileFilter;
+	import flash.events.ProgressEvent;
+	import flash.events.MouseEvent;
+	import flash.utils.ByteArray;
 	
 	/**
 	 * Form Group Upload
@@ -34,8 +43,11 @@ package cuatroPlumasUI.GrayApp {
 		protected var btn:Button;
 		protected var bg:Bitmap;
 		protected var assets:Assets;
+		protected var has_one_loaded:Boolean = false;
+		public var bm:Bitmap;
 		
 		public function formGroupUpload(url:String):void {
+			
 			this.assets = new Assets();
 			this.uploadPhotoScript = url;
 			this.uploadURL = new URLRequest();
@@ -61,18 +73,26 @@ package cuatroPlumasUI.GrayApp {
 		}
 		
 		protected function fileSelectHandler(e:Event):void{
-			//this.uploadSound.play();
-			this.fileRef.load();	
+			this.fileRef.load();
+			this.uploadSound.play();	
 		}
 		
 		protected function fileLoaded(e:Event):void{
-			ExternalInterface.call("console.log", "yxxxxttt");
-			ExternalInterface.call("console.log", this.fileRef);
-			var tmpImg:Bitmap = new Bitmap(this.fileRef.data as BitmapData);
-			ExternalInterface.call("console.log", tmpImg);
-			this.addChild(tmpImg);
-			tmpImg.x = 250;
+			 var ba:ByteArray=fileRef.data; // get data
+			 var loader:Loader=new Loader();
+			 loader.contentLoaderInfo.addEventListener(Event.COMPLETE,loaded);
+			 loader.loadBytes(ba);
 		}
 		
+		protected function loaded(e:Event):void{ // bitmap loaded
+   			if(this.has_one_loaded){
+				this.removeChild(this.bm);
+			}
+			this.bm = e.currentTarget.loader.content as Bitmap;
+			this.addChild(this.bm);
+			this.bm.y = 50;
+			this.bm.x = -75;
+			this.has_one_loaded = true;
+		}
 	}
 }
