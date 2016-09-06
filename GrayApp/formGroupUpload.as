@@ -1,4 +1,5 @@
 package cuatroPlumasUI.GrayApp {
+	import pragmaTico.CRCarrosLeads.Web.Admin.FormFinale.NewFormModal;
 	import flash.geom.Rectangle;
 	import flash.display.BitmapData;
 	import flash.net.FileFilter;
@@ -22,7 +23,8 @@ package cuatroPlumasUI.GrayApp {
 	
 	/**
 	 * Form Group Upload
-	 * a form group upload for CakePHP models acting as upload
+	 * a form group upload to be place on Modal for CakePHP models acting as upload
+	 * modal container should have on onShowingFile method
 	 * 
 	 * @author Rolando <rolando@emptyart.xyz>
 	 */
@@ -45,9 +47,10 @@ package cuatroPlumasUI.GrayApp {
 		protected var assets:Assets;
 		protected var has_one_loaded:Boolean = false;
 		public var bm:Bitmap;
+		public var container:NewFormModal;
 		
-		public function formGroupUpload(url:String):void {
-			
+		public function formGroupUpload(url:String,cont:NewFormModal):void {
+			this.container = cont;
 			this.assets = new Assets();
 			this.uploadPhotoScript = url;
 			this.uploadURL = new URLRequest();
@@ -66,6 +69,7 @@ package cuatroPlumasUI.GrayApp {
 			this.fileRef = new FileReference();
 			this.fileRef.addEventListener(Event.SELECT, fileSelectHandler);
 			this.fileRef.addEventListener(Event.COMPLETE, fileLoaded);
+			//this.container.onHideFile();
 		}
 		
 		public function lookForFile(e:MouseEvent):void{
@@ -93,6 +97,7 @@ package cuatroPlumasUI.GrayApp {
 			this.bm.y = 50;
 			this.bm.x = -75;
 			this.has_one_loaded = true;
+			this.container.onShowingFile();
 		}
 	}
 }
