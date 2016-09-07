@@ -36,9 +36,9 @@ package cuatroPlumasUI.GrayApp {
 		
 		[Embed(source="Assets/Sounds/AFX_dela-zicoalph-8599_hifi.mp3")] 
         protected var uploadEndSoundClass:Class; 
-		protected var uploadEndSound:Sound;
+		public var uploadEndSound:Sound;
 		
-		protected var fileRef:FileReference;
+		public var fileRef:FileReference;
 		protected var uploadURL:URLRequest;
 		public var uploadPhotoScript:String = "http://guayabosnake.tree/givesFruit.rb";
 		protected var totalFiles:Number = 0;
@@ -48,6 +48,7 @@ package cuatroPlumasUI.GrayApp {
 		protected var has_one_loaded:Boolean = false;
 		public var bm:Bitmap;
 		public var container:NewFormModal;
+		protected var loader:Loader;
 		
 		public function formGroupUpload(url:String,cont:NewFormModal):void {
 			this.container = cont;
@@ -65,6 +66,7 @@ package cuatroPlumasUI.GrayApp {
 			this.btn.addEventListener(MouseEvent.CLICK, lookForFile);
 			
 			this.uploadSound = new uploadSoundClass();
+			this.uploadEndSound = new uploadEndSoundClass();
 			
 			this.fileRef = new FileReference();
 			this.fileRef.addEventListener(Event.SELECT, fileSelectHandler);
@@ -83,12 +85,13 @@ package cuatroPlumasUI.GrayApp {
 		
 		protected function fileLoaded(e:Event):void{
 			 var ba:ByteArray=fileRef.data; // get data
-			 var loader:Loader=new Loader();
+			 this.loader =new Loader();
 			 loader.contentLoaderInfo.addEventListener(Event.COMPLETE,loaded);
 			 loader.loadBytes(ba);
 		}
 		
 		protected function loaded(e:Event):void{ // bitmap loaded
+			this.loader.contentLoaderInfo.removeEventListener(Event.COMPLETE, loaded);
    			if(this.has_one_loaded){
 				this.removeChild(this.bm);
 			}
