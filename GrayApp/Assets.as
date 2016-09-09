@@ -102,5 +102,29 @@ package cuatroPlumasUI.GrayApp {
 		public function get formGroupBGData():BitmapData{
 			return _formGroupBG.bitmapData;
 		}
+		
+		[Embed(source="Assets/gridrow.png")]
+		private var gridrow:Class;
+		private var _gridrow:Bitmap = new gridrow() as Bitmap;
+		
+		public function get gridrowClass():Bitmap{
+			return _gridrow;
+		}
+		
+		public function get gridrowData():BitmapData{
+			return _gridrow.bitmapData;
+		}
+		
+		[Embed(source="Assets/xbtn.png")]
+		private var xbtn:Class;
+		private var _xbtn:Bitmap = new xbtn() as Bitmap;
+		
+		public function get xbtnClass():Bitmap{
+			return _xbtn;
+		}
+		
+		public function get xbtnData():BitmapData{
+			return _xbtn.bitmapData;
+		}
 	}
 }
