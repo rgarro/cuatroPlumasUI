@@ -126,5 +126,17 @@ package cuatroPlumasUI.GrayApp {
 		public function get xbtnData():BitmapData{
 			return _xbtn.bitmapData;
 		}
+		
+		[Embed(source="Assets/okbg.png")]
+		private var okbg:Class;
+		private var _okbg:Bitmap = new okbg() as Bitmap;
+		
+		public function get okbgClass():Bitmap{
+			return _okbg;
+		}
+		
+		public function get okbgData():BitmapData{
+			return _okbg.bitmapData;
+		}
 	}
 }

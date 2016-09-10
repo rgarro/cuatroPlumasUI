@@ -17,8 +17,9 @@ package cuatroPlumasUI.GrayApp {
 		
 		protected var assets:Assets;
 		protected var label:TextField;
-		protected var id:Number;
+		public var id:Number;
 		public var delBtn:Sprite;
+		
 		
 		public function gridRow(labelStr:String,idNum:Number):void {
 			this.assets = new Assets();
@@ -46,7 +47,9 @@ package cuatroPlumasUI.GrayApp {
 			this.delBtn.addChild(del);
 			this.delBtn.useHandCursor = true;
 			this.delBtn.buttonMode = true;
-			this.delBtn.x = 766;this.delBtn.y = 5;			
+			this.delBtn.x = 766;this.delBtn.y = 5;	
 		}
+		
+		
 	}
 }
