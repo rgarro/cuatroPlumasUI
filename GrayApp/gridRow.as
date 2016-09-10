@@ -1,4 +1,5 @@
 package cuatroPlumasUI.GrayApp {
+	import flash.events.MouseEvent;
 	import pragmaTico.CRCarrosLeads.Web.Admin.FormFinale.Grid;
 	import flash.text.TextFieldType;
 	import flash.text.TextFormat;
@@ -20,7 +21,7 @@ package cuatroPlumasUI.GrayApp {
 		protected var label:TextField;
 		public var id:Number;
 		public var delBtn:Sprite;
-		
+		public var grid:Grid;
 		
 		public function gridRow(labelStr:String,idNum:Number):void {
 			this.assets = new Assets();
@@ -49,8 +50,12 @@ package cuatroPlumasUI.GrayApp {
 			this.delBtn.useHandCursor = true;
 			this.delBtn.buttonMode = true;
 			this.delBtn.x = 766;this.delBtn.y = 5;	
+			this.delBtn.addEventListener(MouseEvent.CLICK, delClick);
 		}
 		
+		public function delClick(e:MouseEvent):void{
+			this.grid.confirmDelete(this.id);
+		}
 		
 	}
 }
