@@ -1,4 +1,5 @@
 package cuatroPlumasUI.GrayApp {
+	import flash.events.Event;
 	import flash.display.Sprite;
 	import flash.text.TextFieldType;
 	
@@ -35,14 +36,6 @@ package cuatroPlumasUI.GrayApp {
 			tf.size = 15;
 			tf.color = 0x006630;
 			
-			this.closeBtn = new Sprite();
-			closeBtn.useHandCursor = true;
-			closeBtn.buttonMode = true;
-			this.addChild(closeBtn);
-			var closeImg:Bitmap = new Bitmap(assets.closemodalbtnData);
-			closeBtn.addChild(closeImg);
-			closeBtn.x = 163;closeBtn.y = 11;
-			
 			this.label = new TextField();
 			
 			this.label.defaultTextFormat = tf;
@@ -54,12 +47,21 @@ package cuatroPlumasUI.GrayApp {
 			label.y = 10;
 			this.clickSound = new clickSoundClass() as Sound;
 			
-			closeBtn.addEventListener(MouseEvent.CLICK, closeThis);
-			
-			this.OKButton = new Button("OK");
+			this.OKButton = new Button("  OK");
 			this.addChild(this.OKButton);
-			this.OKButton.x = 50;
-			this.OKButton.y = 50;
+			this.OKButton.x = 60;
+			this.OKButton.y = 65;
+			this.addEventListener(Event.ADDED_TO_STAGE, initAdded);
+		}
+		
+		public function initAdded(e:Event):void{
+			this.closeBtn = new Sprite();
+			this.addChild(closeBtn);
+			var closeImg:Bitmap = new Bitmap(assets.closemodalbtnData);
+			closeBtn.addChild(closeImg);
+			
+			closeBtn.x = 163;closeBtn.y = 11;
+			closeBtn.addEventListener(MouseEvent.CLICK, closeThis);
 		}
 		
 		protected function closeThis(e:MouseEvent):void{
