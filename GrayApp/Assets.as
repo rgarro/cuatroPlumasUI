@@ -115,6 +115,31 @@ package cuatroPlumasUI.GrayApp {
 			return _gridrow.bitmapData;
 		}
 		
+		[Embed(source="Assets/gridrowB.png")]
+		private var gridrowB:Class;
+		private var _gridrowB:Bitmap = new gridrowB() as Bitmap;
+		
+		public function get gridrowBClass():Bitmap{
+			return _gridrowB;
+		}
+		
+		public function get gridrowBData():BitmapData{
+			return _gridrowB.bitmapData;
+		}
+		
+		
+		[Embed(source="Assets/gridrowBon.png")]
+		private var gridrowBon:Class;
+		private var _gridrowBon:Bitmap = new gridrowBon() as Bitmap;
+		
+		public function get gridrowBonClass():Bitmap{
+			return _gridrowBon;
+		}
+		
+		public function get gridrowBonData():BitmapData{
+			return _gridrowBon.bitmapData;
+		}
+		
 		[Embed(source="Assets/xbtn.png")]
 		private var xbtn:Class;
 		private var _xbtn:Bitmap = new xbtn() as Bitmap;

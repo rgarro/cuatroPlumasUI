@@ -19,6 +19,10 @@ package cuatroPlumasUI.GrayApp {
 	 */
 	public class gridRowB extends Sprite {
 		
+		[Embed(source="Assets/Sounds/Cold_Kno-Cosmic_D-7839_hifi.mp3")] 
+        protected var monSoundClass:Class; 
+		protected var monSound:Sound;
+		
 		[Embed(source="Assets/Sounds/Click_So-S_Bainbr-7974_hifi.mp3")] 
         protected var clickSoundClass:Class; 
 		protected var clickSound:Sound;
@@ -36,13 +40,14 @@ package cuatroPlumasUI.GrayApp {
 		protected var loader:Loader;
 		protected var dataObj:Object;
 		protected var imgUrl:String;
+		public var bg:Bitmap;
 		
 		public function gridRowB(labelStr:String,idNum:Number,datao:Object,url:String):void {
 			this.imgUrl = url;
 			this.dataObj = datao;
 			this.assets = new Assets();
-			var bg:Bitmap = new Bitmap(this.assets.gridrowData);
-			this.addChild(bg);
+			this.bg = new Bitmap(this.assets.gridrowBData);
+			this.addChild(this.bg);
 			
 			this.id = idNum;
 			var tf:TextFormat = new TextFormat();
@@ -72,9 +77,23 @@ package cuatroPlumasUI.GrayApp {
 			ulabel.x = 14;
 			ulabel.y = 25;
 			
+			var tff:TextFormat = new TextFormat();
+			tff.size = 12;
+			tff.color = 0xCCCCCC;
+			
+			var slabel = new TextField();
+			slabel.defaultTextFormat = tff;
+			this.addChild(slabel);
+			slabel.type = TextFieldType.DYNAMIC;
+			slabel.width = 275;
+			slabel.text = this.dataObj.since;
+			slabel.x = 14;
+			slabel.y = 75;
+			
 			
 			this.clickSound = new clickSoundClass() as Sound;	
 			this.loadSound = new loadSoundClass() as Sound;
+			this.monSound = new monSoundClass() as Sound;
 			this.delBtn = new Sprite();
 			this.addChild(this.delBtn);
 			var del:Bitmap = new Bitmap(this.assets.xbtnData);
@@ -87,7 +106,7 @@ package cuatroPlumasUI.GrayApp {
 			this.loader = new Loader();
 			this.addChild(this.loader);
 			this.loader.x = 150;
-			this.loader.y = -15;
+			this.loader.y = 10;
 			this.loader.contentLoaderInfo.addEventListener(Event.COMPLETE, doneLoad);
 			this.loader.contentLoaderInfo.addEventListener(IOErrorEvent.IO_ERROR,loadingError);
 			
@@ -109,6 +128,17 @@ package cuatroPlumasUI.GrayApp {
 		public function adedToStage(event:Event):void{
 			this.removeEventListener(Event.ADDED_TO_STAGE, adedToStage);
 			this.startImageLoad();
+			this.addEventListener(MouseEvent.MOUSE_OVER, overEvt);
+			this.addEventListener(MouseEvent.MOUSE_OUT, outEvt);
+		}
+		
+		protected function outEvt(e:MouseEvent):void{
+			this.bg.bitmapData = this.assets.gridrowBData;
+		}
+		
+		protected function overEvt(e:MouseEvent):void{
+			this.monSound.play();
+			this.bg.bitmapData = this.assets.gridrowBonData;
 		}
 		
 		protected function startImageLoad():void{
@@ -117,7 +147,7 @@ package cuatroPlumasUI.GrayApp {
 			this.loader.load(new URLRequest(url));
 		}
 		public function delClick(e:MouseEvent):void{
-			this.grid.confirmDelete(this.id);
+			this.grid.confirmDelete(this.id,this.y);
 		}
 		
 	}
