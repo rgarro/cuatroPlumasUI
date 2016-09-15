@@ -163,5 +163,113 @@ package cuatroPlumasUI.GrayApp {
 		public function get okbgData():BitmapData{
 			return _okbg.bitmapData;
 		}
+		
+		[Embed(source="Assets/paginacionBackBg.png")]
+		private var paginacionBackBg:Class;
+		private var _paginacionBackBg:Bitmap = new paginacionBackBg() as Bitmap;
+		
+		public function get paginacionBackBgClass():Bitmap{
+			return _paginacionBackBg;
+		}
+		
+		public function get paginacionBackBgData():BitmapData{
+			return _paginacionBackBg.bitmapData;
+		}
+		
+		[Embed(source="Assets/paginacionBackBgOff.png")]
+		private var paginacionBackBgOff:Class;
+		private var _paginacionBackBgOff:Bitmap = new paginacionBackBgOff() as Bitmap;
+		
+		public function get paginacionBackBgOffClass():Bitmap{
+			return _paginacionBackBgOff;
+		}
+		
+		public function get paginacionBackBgOffData():BitmapData{
+			return _paginacionBackBgOff.bitmapData;
+		}
+		
+		[Embed(source="Assets/paginacionBackBgOver.png")]
+		private var paginacionBackBgOver:Class;
+		private var _paginacionBackBgOver:Bitmap = new paginacionBackBgOver() as Bitmap;
+		
+		public function get paginacionBackBgOverClass():Bitmap{
+			return _paginacionBackBgOver;
+		}
+		
+		public function get paginacionBackBgOverData():BitmapData{
+			return _paginacionBackBgOver.bitmapData;
+		}
+		
+		[Embed(source="Assets/paginacionButtonBg.png")]
+		private var paginacionButtonBg:Class;
+		private var _paginacionButtonBg:Bitmap = new paginacionButtonBg() as Bitmap;
+		
+		public function get paginacionButtonBgClass():Bitmap{
+			return _paginacionButtonBg;
+		}
+		
+		public function get paginacionButtonBgData():BitmapData{
+			return _paginacionButtonBg.bitmapData;
+		}
+		
+		[Embed(source="Assets/paginacionButtonBgOff.png")]
+		private var paginacionButtonBgOff:Class;
+		private var _paginacionButtonBgOff:Bitmap = new paginacionButtonBgOff() as Bitmap;
+		
+		public function get paginacionButtonBgOffClass():Bitmap{
+			return _paginacionButtonBgOff;
+		}
+		
+		public function get paginacionButtonBgOffData():BitmapData{
+			return _paginacionButtonBgOff.bitmapData;
+		}
+		
+		[Embed(source="Assets/paginacionButtonBgOver.png")]
+		private var paginacionButtonBgOver:Class;
+		private var _paginacionButtonBgOver:Bitmap = new paginacionButtonBgOver() as Bitmap;
+		
+		public function get paginacionButtonBgOverClass():Bitmap{
+			return _paginacionButtonBgOver;
+		}
+		
+		public function get paginacionButtonBgOverData():BitmapData{
+			return _paginacionButtonBgOver.bitmapData;
+		}
+		
+		[Embed(source="Assets/paginacionFwdBg.png")]
+		private var paginacionFwdBg:Class;
+		private var _paginacionFwdBg:Bitmap = new paginacionFwdBg() as Bitmap;
+		
+		public function get paginacionFwdBgClass():Bitmap{
+			return _paginacionFwdBg;
+		}
+		
+		public function get paginacionFwdBgData():BitmapData{
+			return _paginacionFwdBg.bitmapData;
+		}
+		
+		[Embed(source="Assets/paginacionFwdBgOff.png")]
+		private var paginacionFwdBgOff:Class;
+		private var _paginacionFwdBgOff:Bitmap = new paginacionFwdBgOff() as Bitmap;
+		
+		public function get paginacionFwdBgOffClass():Bitmap{
+			return _paginacionFwdBgOff;
+		}
+		
+		public function get paginacionFwdBgOffData():BitmapData{
+			return _paginacionFwdBgOff.bitmapData;
+		}
+		
+		[Embed(source="Assets/paginacionFwdBgOver.png")]
+		private var paginacionFwdBgOver:Class;
+		private var _paginacionFwdBgOver:Bitmap = new paginacionFwdBgOver() as Bitmap;
+		
+		public function get paginacionFwdBgOverClass():Bitmap{
+			return _paginacionFwdBgOver;
+		}
+		
+		public function get paginacionFwdBgOverData():BitmapData{
+			return _paginacionFwdBgOver.bitmapData;
+		}
 	}
 }
