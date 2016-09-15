@@ -4,6 +4,7 @@ package cuatroPlumasUI.GrayApp {
 	import flash.media.Sound;
 	import flash.display.Bitmap;
 	import flash.display.Sprite;
+	import flash.external.ExternalInterface;
 
 	/**
 	 * @author rolando
@@ -14,13 +15,15 @@ package cuatroPlumasUI.GrayApp {
         protected var clickSoundClass:Class; 
 		protected var clickSound:Sound;
 		
-		protected var container:PaginatorContainer;
+		public var container:PaginatorContainer;
 		public var offSet:Number;
 		public var limit:Number;
 		protected var assets:Assets;
 		protected var bg:Bitmap;
 		
 		public function PaginatorPageBtn(offSetInt:Number,limitInt:Number):void {
+			this.useHandCursor = true;
+			this.buttonMode = true;
 			this.offSet = offSetInt;
 			this.limit = limitInt;
 			this.assets = new Assets();
@@ -39,6 +42,7 @@ package cuatroPlumasUI.GrayApp {
 		protected function evtClick(e:MouseEvent):void{
 			this.bg.bitmapData = this.assets.paginacionButtonBgOffData;
 			this.clickSound.play();
+			this.container.setCurrentOffset(this.offSet);
 		}
 		
 		protected function outEvt(e:MouseEvent):void{

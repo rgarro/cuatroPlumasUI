@@ -137,13 +137,13 @@ package cuatroPlumasUI.GrayApp {
 		}
 		
 		protected function overEvt(e:MouseEvent):void{
-			this.monSound.play();
+			//this.monSound.play();
 			this.bg.bitmapData = this.assets.gridrowBonData;
 		}
 		
 		protected function startImageLoad():void{
 			var url:String = this.imgUrl + "app/webroot/files/publicidad/" + String(this.dataObj.id) + "/" + this.dataObj.Filename;
-			this.loadSound.play();
+			//this.loadSound.play();
 			this.loader.load(new URLRequest(url));
 		}
 		public function delClick(e:MouseEvent):void{

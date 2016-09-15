@@ -14,7 +14,7 @@ package cuatroPlumasUI.GrayApp {
         protected var clickSoundClass:Class; 
 		protected var clickSound:Sound;
 		
-		protected var container:PaginatorContainer;
+		public var container:PaginatorContainer;
 		public var offSet:Number;
 		public var limit:Number;
 		protected var assets:Assets;
