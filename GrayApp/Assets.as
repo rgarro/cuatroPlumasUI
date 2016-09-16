@@ -319,5 +319,29 @@ package cuatroPlumasUI.GrayApp {
 		public function get magnifierBtnOverData():BitmapData{
 			return _magnifierBtnOver.bitmapData;
 		}
+		
+		[Embed(source="Assets/okBtn.png")]
+		private var okBtn:Class;
+		private var _okBtn:Bitmap = new okBtn() as Bitmap;
+		
+		public function get okBtnClass():Bitmap{
+			return _okBtn;
+		}
+		
+		public function get okBtnData():BitmapData{
+			return _okBtn.bitmapData;
+		}
+		
+		[Embed(source="Assets/deleteXbtn.png")]
+		private var deleteXbtn:Class;
+		private var _deleteXbtn:Bitmap = new deleteXbtn() as Bitmap;
+		
+		public function get deleteXbtnClass():Bitmap{
+			return _deleteXbtn;
+		}
+		
+		public function get deleteXbtnData():BitmapData{
+			return _deleteXbtn.bitmapData;
+		}
 	}
 }
