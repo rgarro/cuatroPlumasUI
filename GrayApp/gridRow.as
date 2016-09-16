@@ -54,7 +54,7 @@ package cuatroPlumasUI.GrayApp {
 		}
 		
 		public function delClick(e:MouseEvent):void{
-			this.grid.confirmDelete(this.id);
+			this.grid.confirmDelete(this.id,this.y);
 		}
 		
 	}

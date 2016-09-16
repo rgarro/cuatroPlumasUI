@@ -114,8 +114,8 @@ package cuatroPlumasUI.GrayApp {
 		}
 		
 		protected function doneLoad(e:Event):void{
-			this.loader.width = 520;
-			this.loader.height = 84;
+			this.loader.width = 599;
+			this.loader.height = 74;
 			this.loader.contentLoaderInfo.removeEventListener(Event.COMPLETE,doneLoad);
 			this.loader.contentLoaderInfo.removeEventListener(IOErrorEvent.IO_ERROR,loadingError);
 		}

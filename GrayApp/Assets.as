@@ -271,5 +271,53 @@ package cuatroPlumasUI.GrayApp {
 		public function get paginacionFwdBgOverData():BitmapData{
 			return _paginacionFwdBgOver.bitmapData;
 		}
+		
+		[Embed(source="Assets/finaleRowBg.png")]
+		private var finaleRowBg:Class;
+		private var _finaleRowBg:Bitmap = new finaleRowBg() as Bitmap;
+		
+		public function get finaleRowBgClass():Bitmap{
+			return _finaleRowBg;
+		}
+		
+		public function get finaleRowBgData():BitmapData{
+			return _finaleRowBg.bitmapData;
+		}
+		
+		[Embed(source="Assets/squarePoolBg.png")]
+		private var squarePoolBg:Class;
+		private var _squarePoolBg:Bitmap = new squarePoolBg() as Bitmap;
+		
+		public function get squarePoolBgClass():Bitmap{
+			return _squarePoolBg;
+		}
+		
+		public function get squarePoolBgData():BitmapData{
+			return _squarePoolBg.bitmapData;
+		}
+		
+		[Embed(source="Assets/magnifierBtn.png")]
+		private var magnifierBtn:Class;
+		private var _magnifierBtn:Bitmap = new magnifierBtn() as Bitmap;
+		
+		public function get magnifierBtnClass():Bitmap{
+			return _magnifierBtn;
+		}
+		
+		public function get magnifierBtnData():BitmapData{
+			return _magnifierBtn.bitmapData;
+		}
+		
+		[Embed(source="Assets/magnifierBtnOver.png")]
+		private var magnifierBtnOver:Class;
+		private var _magnifierBtnOver:Bitmap = new magnifierBtnOver() as Bitmap;
+		
+		public function get magnifierBtnOverClass():Bitmap{
+			return _magnifierBtnOver;
+		}
+		
+		public function get magnifierBtnOverData():BitmapData{
+			return _magnifierBtnOver.bitmapData;
+		}
 	}
 }
